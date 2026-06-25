@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ISC2 CC Practice Exam</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="exam-shell">
+      <aside class="side-panel" aria-label="Exam status">
+        <div class="brand-block">
+          <p class="eyebrow">แบบฝึกทำข้อสอบ</p>
+          <h1 id="examTitle">ISC2 CC Practice Exam</h1>
+        </div>
+
+        <section class="timer-panel" aria-label="Timer">
+          <span class="timer-label">เวลาที่เหลือ</span>
+          <strong id="timerText">--:--:--</strong>
+          <div class="timer-track" aria-hidden="true">
+            <span id="timerBar"></span>
+          </div>
+        </section>
+
+        <section class="status-grid" aria-label="Progress">
+          <div>
+            <span id="answeredCount">0</span>
+            <small>ทำแล้ว</small>
+          </div>
+          <div>
+            <span id="remainingCount">0</span>
+            <small>เหลือ</small>
+          </div>
+          <div>
+            <span id="scoreCount">-</span>
+            <small>คะแนน</small>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button id="submitBtn" class="primary-btn" type="button">ส่งข้อสอบ</button>
+          <button id="newExamBtn" class="secondary-btn" type="button">สุ่มชุดใหม่</button>
+        </div>
+
+        <nav class="question-map" aria-label="Question navigator" id="questionMap"></nav>
+      </aside>
+
+      <section class="work-area" aria-live="polite">
+        <header class="question-header">
+          <div>
+            <p class="eyebrow" id="domainText">Domain</p>
+            <h2 id="questionNumber">Question 1</h2>
+          </div>
+          <span id="examMode" class="mode-pill">กำลังทำ</span>
+        </header>
+
+        <article class="question-card">
+          <p id="questionText" class="question-text"></p>
+          <div id="choiceList" class="choice-list"></div>
+          <section id="feedbackPanel" class="feedback-panel" hidden>
+            <h3 id="feedbackTitle"></h3>
+            <p id="correctAnswer"></p>
+            <p id="explanationText"></p>
+          </section>
+        </article>
+
+        <footer class="bottom-bar">
+          <button id="prevBtn" class="nav-btn" type="button">ก่อนหน้า</button>
+          <button id="nextBtn" class="nav-btn" type="button">ถัดไป</button>
+        </footer>
+
+        <section id="resultsPanel" class="results-panel" hidden>
+          <h2>สรุปผลสอบ</h2>
+          <div id="resultOverview" class="result-overview"></div>
+          <div id="domainScores" class="domain-scores"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="exam-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
